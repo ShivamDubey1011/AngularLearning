@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-property-card',
@@ -7,12 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropertyCardComponent implements OnInit {
 
-  Property : any ={
-    "Id" :1,
-    "Name":"Birla House",
-    "Type": "House",
-    "Price" : 12000
-  }
+  /**
+   * with the help of @Input Decorator we are going to get value from parend component and then we are
+   *  using it in html to show the property .
+   */
+  @Input() Property : any;
   constructor() { }
 
   ngOnInit(): void {
